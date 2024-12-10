@@ -66,4 +66,19 @@ export async function initializeUpload(name: string, size: number) {
       resolve(body);
     });
   });
+}
+
+export async function getVideo(videoId: string): Promise<VimeoVideo> {
+  return new Promise((resolve, reject) => {
+    client.request({
+      method: "GET",
+      path: `/videos/${videoId}`,
+    }, (error, body) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(body);
+    });
+  });
 } 
