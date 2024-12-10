@@ -1,10 +1,7 @@
 import { getVideo } from "@/lib/vimeo";
 
-export default async function WatchPage({
-  params,
-}: {
-  params: { videoId: string };
-}) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function WatchPage({ params }: any) {
   const videoId = params.videoId.replace("/videos/", "");
   const video = await getVideo(videoId);
 
@@ -22,4 +19,4 @@ export default async function WatchPage({
       <p className="text-muted-foreground">{video.description}</p>
     </div>
   );
-} 
+}

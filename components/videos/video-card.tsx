@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import type { VimeoVideo } from "@/lib/vimeo";
 import Link from "next/link";
+import Image from "next/image";
 
 interface VideoCardProps {
   video: VimeoVideo;
@@ -17,10 +18,12 @@ export function VideoCard({ video }: VideoCardProps) {
     <Link href={`/watch/${videoId}`}>
       <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
         <AspectRatio ratio={16 / 9}>
-          <img
+          <Image
             src={thumbnail}
             alt={video.name}
-            className="object-cover w-full h-full"
+            className="object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </AspectRatio>
         <div className="p-4">
@@ -33,4 +36,4 @@ export function VideoCard({ video }: VideoCardProps) {
       </Card>
     </Link>
   );
-} 
+}

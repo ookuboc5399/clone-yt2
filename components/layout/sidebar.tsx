@@ -17,7 +17,7 @@ export function Sidebar() {
     )}>
       <div className="flex h-full flex-col">
         <div className="flex h-14 items-center border-b px-3">
-          <Button variant="ghost" size="icon" onClick={() => setCollapsed(!collapsed)}>
+          <Button variant="ghost" size="sm" onClick={() => setCollapsed(!collapsed)}>
             <Menu className="h-5 w-5" />
           </Button>
         </div>
@@ -26,25 +26,25 @@ export function Sidebar() {
             <div className="px-3">
               <div className="space-y-1">
                 <Link href="/">
-                  <Button variant="ghost" size={collapsed ? "icon" : "default"} className="w-full justify-start">
+                  <Button variant="ghost" size={collapsed ? "sm" : "default"} className="w-full justify-start">
                     <Home className="h-5 w-5" />
                     {!collapsed && <span className="ml-2">ホーム</span>}
                   </Button>
                 </Link>
                 <Link href="/search">
-                  <Button variant="ghost" size={collapsed ? "icon" : "default"} className="w-full justify-start">
+                  <Button variant="ghost" size={collapsed ? "sm" : "default"} className="w-full justify-start">
                     <Search className="h-5 w-5" />
                     {!collapsed && <span className="ml-2">検索</span>}
                   </Button>
                 </Link>
                 <Link href="/library">
-                  <Button variant="ghost" size={collapsed ? "icon" : "default"} className="w-full justify-start">
+                  <Button variant="ghost" size={collapsed ? "sm" : "default"} className="w-full justify-start">
                     <Library className="h-5 w-5" />
                     {!collapsed && <span className="ml-2">ライブラリ</span>}
                   </Button>
                 </Link>
                 <Link href="/upload">
-                  <Button variant="ghost" size={collapsed ? "icon" : "default"} className="w-full justify-start">
+                  <Button variant="ghost" size={collapsed ? "sm" : "default"} className="w-full justify-start">
                     <Upload className="h-5 w-5" />
                     {!collapsed && <span className="ml-2">アップロード</span>}
                   </Button>

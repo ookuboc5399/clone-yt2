@@ -24,7 +24,7 @@ export interface VimeoVideo {
 }
 
 export async function getVideos(): Promise<VimeoVideo[]> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     client.request({
       method: "GET",
       path: "/me/videos",
